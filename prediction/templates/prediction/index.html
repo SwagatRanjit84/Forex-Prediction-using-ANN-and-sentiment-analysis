@@ -1,0 +1,50 @@
+{%load static%}
+
+
+<link rel = "stylesheet" type="text/css" href="{% static 'prediction/homepage.css' %}" \>
+
+
+<br><br>
+    <a href="{%url 'abc' %}"> Click here to view graph
+    </a>
+
+
+<img src="{% static 'prediction/images/ig1.png' %}" width=50% height=50%>
+
+
+<h1>Fundamental Analysis</h1>
+<table border="1"
+    >
+<tr>
+            <th><h1>Date</h1></th>
+
+        <th><h1>Gold</h1></th>
+         <th><h1>Nasdaq</h1></th>
+        <th><h1>Oil</h1></th>
+        <th><h1>USD/NPR</h1></th>
+        <th><h1>Predicted tommorow USD/NPR</h1></th>
+
+</tr>
+
+        {% for e in all_data %}
+
+<tr>
+
+
+      <td> {{ e.0}} </td>
+      <td> {{ e.1}} </td>
+      <td> {{ e.2}} </td>
+      <td> {{ e.3}} </td>
+      <td> {{ e.4}} </td>
+      <td> {{ e.5}} </td>
+   {% endfor %}
+
+
+
+
+</tr>
+
+
+</table>
+
+

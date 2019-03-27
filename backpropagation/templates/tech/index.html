@@ -1,0 +1,49 @@
+{%load static%}
+
+
+<link rel = "stylesheet" type="text/css" href="{% static 'prediction/homepage.css' %}" \>
+
+
+<img src="{% static 'tech/images/fig2.png' %}" width=50% height=50%>
+
+<br><br>
+    <a href="{%url 'abca' %}"> Click here to view graph
+    </a>
+
+
+
+<h1>Technical Analysis</h1>
+<table border="1">
+<tr>
+            <th><h1>Date</h1></th>
+
+        <th><h1>Low</h1></th>
+         <th><h1>Open</h1></th>
+        <th><h1>High</h1></th>
+        <th><h1>Close</h1></th>
+        <th><h1>Predicted tommorow close USD/NPR</h1></th>
+
+</tr>
+
+        {% for e in all_data %}
+
+<tr>
+
+
+      <td> {{ e.0}} </td>
+      <td> {{ e.1}} </td>
+      <td> {{ e.2}} </td>
+      <td> {{ e.3}} </td>
+      <td> {{ e.4}} </td>
+      <td> {{ e.5}} </td>
+   {% endfor %}
+
+
+
+
+</tr>
+
+
+</table>
+
+
